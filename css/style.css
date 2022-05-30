@@ -1,0 +1,338 @@
+
+:root{
+  --main-color:#fff;
+  --text-color:#000;
+  --secondary-color:#8983f7;
+  --main-transition:.3s;
+  --span1-color:#767676;
+  --span2-color:#000;
+  --p-color:#a1a1a1;
+  --bottom-div-color:#000;
+  --start-btn-color: #8983f7;
+}
+
+/* Start Globals */
+*{
+  padding: 0 ;
+  margin: 0 ;
+  box-sizing: border-box;
+}
+ul{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+img{
+  max-width: 100%;
+  vertical-align: middle;
+}
+p{
+  color: var(--p-color);
+}
+a, a:hover{
+  color: #fff ;
+}
+/* main-btn */
+.active{
+  color: #8983f7;
+  background: #fff;
+  padding: 7px 15px;
+  border-radius: 20px;
+}
+/* main-btn */
+/* End Globals */
+
+body{
+  font-family: 'Montserrat', sans-serif !important;
+  background-color: var(--main-color);
+  font-size: 16px;
+  overflow-x:hidden;
+  line-height: 1.5;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* Start header */
+/* Start nav */
+header{
+  background-color: var(--secondary-color);
+  min-height: 60px;
+  max-height: 70px;
+}
+nav ul{
+  gap: 20px;
+}
+nav ul a,nav ul  a:hover{
+  color: #fff ;
+}
+nav ul a{
+  transition: .3s;
+}
+nav ul  a:hover{
+  color: #8983f7;
+  background: #fff;
+  padding: 7px 15px;
+  border-radius: 20px;
+}
+nav ul a.active:hover{
+  color: #8983f7;
+}
+/* End nav */
+/* End header */
+
+/* Start main */
+main{
+  height: calc(100vh - 63px);
+}
+/* End main */
+
+/* The switch - the box around the slider */
+.switch {
+/* --moon-mask: ; */
+  font-size: 17px;
+  position: relative;
+  display: inline-block;
+  width: 3.3em;
+  height: 1.5rem;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #f4f4f5;
+  transition: .4s;
+  border-radius: 30px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.2rem;
+  width: 1.2rem;
+  border-radius: 50%;
+  left: 0.2rem;
+  bottom: 0.1em;
+  background: linear-gradient(40deg,#ff0080,#ff8c00 70%);
+  ;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #303136;
+}
+
+input:checked + .slider:before {
+  transform: translateX(1.5em);
+  background: #303136;
+  box-shadow: inset -3px -2px 5px -2px #8983f7, inset -10px -5px 0 0 #a3dafb;
+}
+/* End mode */
+
+/* Strat animated-title */
+@import url('https://fonts.googleapis.com/css?family=Roboto:700');
+@keyframes showTopText {
+  0% { transform: translate3d(0%, 100%, 0); opacity: 0.1; }
+  40%, 60% { transform: translate3d(0%, 50%, 0); opacity: 0.5}
+  100% { transform: translate3d(0, 0, 0); opacity: 1}
+}
+@keyframes showBottomText {
+  0% { transform: translate3d(0, -100%, 0); opacity: 0.1}
+  100% { transform: translate3d(0, 0, 0); opacity: 1}
+}
+.animated-title {
+  color: #222;
+  width: 100%;
+  position: relative;  
+}
+@media(max-width:576px){
+  .animated-title{
+    display: none;
+  }
+}
+.animated-title > div {
+  height: fit-content;
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+.animated-title > div div {
+  font-size: 8vmin;
+  padding: 2vmin 0;
+  position: relative;
+}
+.animated-title > div div span {
+  display: block;
+  color: var(--span2-color);
+}
+.animated-title > div.text-top {
+  border-bottom: 3px solid #8983f7;
+  border-bottom-left-radius: 20px;
+  /* border-bottom-right-radius: 20px; */
+  width: 85%;
+  transition: 0.5s;
+}
+.animated-title > div.text-top div {
+  animation: showTopText 1s;
+  animation-delay: 0.5s;
+  animation-fill-mode: forwards;
+  bottom: 0;
+  transform: translate(0, 100%);
+  opacity: 0.3;
+}
+.animated-title > div.text-top div span:first-child {
+  color: var(--span1-color);
+}
+.animated-title > div.text-bottom {
+  border-top: 3px solid #8983f7;
+  border-top-left-radius: 20px;
+  width: 80%;
+  transition: 2.5s;
+  color: var(--bottom-div-color);
+}
+.animated-title > div.text-bottom div {
+  animation: showBottomText 0.5s;
+  animation-delay: 1.75s;
+  animation-fill-mode: forwards;
+  top: 0;
+  transform: translate(0, -100%);
+  opacity: 0.3;
+}
+
+/* End animated-title */
+
+/* Start buttons */
+/* Start buttons */
+/* From uiverse.io */
+@media(max-width:768px){
+main .row{
+  flex-direction: column-reverse;
+  text-align: center;
+}
+main{
+
+  /* background-color: var(--secondary-color); */
+}
+
+}
+main .btns{
+position: relative;
+bottom:0;
+width: 100%;
+height:30%;
+}
+button {
+position: relative;
+display: inline-block;
+cursor: pointer;
+outline: none;
+border: 0;
+vertical-align: middle;
+text-decoration: none;
+background: transparent;
+padding: 0;
+font-size: inherit;
+font-family: inherit;
+}
+
+button.learn-more {
+width: 12rem;
+height: auto;
+}
+
+button.learn-more .circle {
+transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+position: relative;
+display: block;
+margin: 0;
+width: 3rem;
+height: 3rem;
+background: #282936;
+border-radius: 1.625rem;
+}
+
+button.learn-more .circle .icon {
+transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+position: absolute;
+top: 0;
+bottom: 0;
+margin: auto;
+background: #fff;
+}
+
+button.learn-more .circle .icon.arrow {
+transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+left: 0.625rem;
+width: 1.125rem;
+height: 0.125rem;
+background: none;
+}
+
+button.learn-more .circle .icon.arrow::before {
+position: absolute;
+content: "";
+top: -0.29rem;
+right: 0.0625rem;
+width: 0.625rem;
+height: 0.625rem;
+border-top: 0.125rem solid #fff;
+border-right: 0.125rem solid #fff;
+transform: rotate(45deg);
+}
+
+button.learn-more .button-text {
+transition: all 0.45s cubic-bezier(0.65, 0, 0.076, 1);
+position: absolute;
+top: 0;
+left: 0;
+right: 0;
+bottom: 0;
+padding: 0.75rem 0;
+margin: 0 0 0 1.85rem;
+color: var(--start-btn-color);
+font-weight: 700;
+line-height: 1.6;
+text-align: center;
+text-transform: uppercase;
+}
+
+button:hover .circle {
+width: 100%;
+}
+
+button:hover .circle .icon.arrow {
+background: #fff;
+transform: translate(1rem, 0);
+}
+
+button:hover .button-text {
+color: #fff;
+}
+
+/* End buttons */
+
+@media(max-width:992px){
+.phone-navbar{
+  width: fit-content;
+  min-height: 50px;
+  position: absolute;
+  background-color: var(--secondary-color);
+  z-index: 10;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0 20px;
+  border-bottom-right-radius: 30px;
+  border-bottom-left-radius: 30px;
+}
+}
